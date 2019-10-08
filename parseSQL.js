@@ -1,0 +1,59 @@
+const appIds = [
+  "ax_demo",
+  "dh_d",
+  "fz_d",
+  "gj_d",
+  "london_d",
+  "xy_d",
+  "zp_d",
+  "zg_d",
+  "harvest_research",
+  "zy_d",
+  "western_d",
+  "changxin",
+  "fupeng",
+  "gaoyi",
+  "kaifeng",
+  "attractor",
+  "zhongtai_research",
+  "lowrisk",
+  "guangfa_research",
+  "huabao",
+  "zhangjiqiang",
+  "zhouhao",
+  "etf_world",
+  "latepost"
+];
+const inst = [
+  "anxin_demo",
+  "dunhe_demo",
+  "fangzheng_demo",
+  "guojun_demo",
+  "london_domo",
+  "xinngye_demo",
+  "zeping_demo",
+  "zhonggeng_demo",
+  "harvest_fund",
+  "zhongyin_demo",
+  "western_demo",
+  "changxin",
+  "fupeng",
+  "gaoyi",
+  "kaifeng",
+  "attractor",
+  "zhongtai_research",
+  "lowrisk",
+  "guangfa",
+  "huabao",
+  "zhangjiqiang",
+  "zhouhao",
+  "etf_world",
+  "latepost"
+];
+const parseSQL = (appIds, inst) => {
+  appIds.forEach((e, i) => {
+    const str = `INSERT INTO \`tucloud\`.\`mp_custom_settings\` (\`app_id\`, \`type\`, \`inst_id\`, \`settings\`, \`valid\`) VALUES ('${e}', '2001', '${inst[i]}', '{\"behavior\":\"handle_click\", \"params\":{\"action\":\"copy_weixin\",\"weixin\":\"FinxOS\"}} ', '1');
+        `;
+    console.log(str);
+  });
+};
