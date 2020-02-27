@@ -13,15 +13,27 @@ function quickSortC(arr, p, r) {
 function partition(arr, p, r) {
   let i = p;
   let pivot = arr[r];
-  for (let j = p; j < r; j++) {
+  for (j = p; j < r; j++) {
     if (arr[j] < pivot) {
-      let tmp = arr[i];
+      let temp = arr[i];
       arr[i] = arr[j];
-      arr[j] = tmp;
+      arr[j] = temp;
       i++;
     }
   }
-  arr[r] = arr[i];
-  arr[i] = pivot;
+  let temp = arr[i];
+  arr[i] = arr[r];
+  arr[r] = temp;
   return i;
 }
+const arr = [8, 10, 2, 3, 6, 1, 5];
+const arr1 = [1];
+const arr2 = [];
+const arr3 = [1, 1, 1, 1, 1];
+const arr4 = [0, 2, 5, 4, 2, 4, 2, 2, 5, 7, 9, 4, 3, 67, 8, 3];
+quickSort(arr);
+quickSort(arr1);
+quickSort(arr2);
+quickSort(arr3);
+quickSort(arr4);
+console.log(arr, arr1, arr2, arr3, arr4);
