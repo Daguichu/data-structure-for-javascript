@@ -31,6 +31,39 @@ const arr1 = [1];
 const arr2 = [];
 const arr3 = [1, 1, 1, 1, 1];
 const arr4 = [0, 2, 5, 4, 2, 4, 2, 2, 5, 7, 9, 4, 3, 67, 8, 3];
+// quickSort(arr);
+// quickSort(arr1);
+// quickSort(arr2);
+// quickSort(arr3);
+// quickSort(arr4);
+// console.log(arr, arr1, arr2, arr3, arr4);
+
+//用快排思想找出第k大的数
+function findK(arr, k) {
+  const len = arr.length;
+  if (len < k || len === 0 || k < 0) return;
+  let q = partition(arr, 0, len - 1);
+  let p = 0,
+    r = len - 1,
+    tmp;
+  while (q + 1 !== k) {
+    if (k > q) {
+      tmp = partition(arr, q + 1, r);
+      p = q + 1;
+      q = tmp;
+    } else {
+      tmp = partition(arr, p, q - 1);
+      r = q - 1;
+      q = tmp;
+    }
+  }
+  console.log(arr[q]);
+  return arr[q];
+}
+findK(arr, 3);
+findK(arr1, 1);
+findK(arr4, 5);
+findK(arr3, 3);
 quickSort(arr);
 quickSort(arr1);
 quickSort(arr2);
