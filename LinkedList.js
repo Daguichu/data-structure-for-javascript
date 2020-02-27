@@ -106,6 +106,16 @@ class LinkedList {
   }
 }
 
+// function concatTwoSortLink(link1, link2){
+//   let p = link1.next;
+//   let q = link2.next;
+//   while(p !== null || q !== null){
+//     if(p.element < q.element){
+//       p = p.next;
+//     }
+//   }
+// }
+
 //测试用例
 const LList = new LinkedList();
 LList.append("chen");
