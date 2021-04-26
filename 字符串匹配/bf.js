@@ -2,7 +2,7 @@ const bf = (n, m) => {
   const lenN = n.length;
   const lenM = m.length;
   if (lenN < lenM) return -1;
-  for (let i = 0; i < lenN; i++) {
+  for (let i = 0; i <= lenN - lenM; i++) {
     let count = 0;
     for (let j = 0; j < lenM; j++) {
       if (n[i + j] !== m[j]) {
@@ -18,7 +18,7 @@ const bf = (n, m) => {
 };
 
 //测试用例
-const a = bf("abcs", "cs");
+const a = bf("abcss", "cs");
 const b = bf("a", "aaaaa");
 const c = bf("asddsdsds", "bnnnnn");
 const d = bf("ssscddsaa", "cddsaa");

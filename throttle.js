@@ -14,7 +14,7 @@ function throttle(fn) {
 function throttle2(fn, wait) {
   const start = new Date().getTime();
 
-  return function() {
+  return function () {
     const end = new Date().getTime();
   };
 }
